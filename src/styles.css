@@ -363,6 +363,7 @@ body::-webkit-scrollbar-track {
   color: #191c20;
   width: 40px;
   height: 40px;
+  border: none;
   border-radius: 10px;
   font-size: 20px;
   font-weight: bolder;
@@ -374,6 +375,17 @@ body::-webkit-scrollbar-track {
   color: #d3d3d3;
   font-size: 1.25em;
   font-weight: bold;
+}
+
+.empty-list {
+  height: 100%;
+}
+
+.empty-list p {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 /* spacing */

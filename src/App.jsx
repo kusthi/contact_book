@@ -22,8 +22,6 @@ export default function App() {
 
   isSearching && searchText === '' && setIsSearching(false);
 
-  console.log(isSearching);
-
   return (
     <main>
       <div className='add-contact-btn-cont'>
@@ -32,7 +30,7 @@ export default function App() {
           onClick={() => {
             const sideEl = document.getElementById(sidebarId);
             const mainEl = document.getElementsByClassName(heroClassName)[0];
-            if (mainEl.style.display !== 'block') {
+            if (contacts.length !== 0 && mainEl.style.display !== 'block') {
               sideEl.style.display = 'none';
               mainEl.style.display = 'block';
             }
@@ -97,12 +95,16 @@ export default function App() {
                 const sideEl = document.getElementById(sidebarId);
                 const mainEl =
                   document.getElementsByClassName(heroClassName)[0];
-                if (sideEl.style.display !== 'block') {
-                  sideEl.style.display = 'block';
-                  mainEl.style.display = 'none';
+                if (contacts.length !== 0) {
+                  if (sideEl.style.display !== 'block') {
+                    sideEl.style.display = 'block';
+                    mainEl.style.display = 'none';
+                  } else {
+                    sideEl.style.display = 'none';
+                    mainEl.style.display = 'block';
+                  }
                 } else {
-                  sideEl.style.display = 'none';
-                  mainEl.style.display = 'block';
+                  setStatus('Show');
                 }
               }}
             >
